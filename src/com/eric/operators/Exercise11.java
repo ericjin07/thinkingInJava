@@ -17,7 +17,7 @@ public class Exercise11 {
             inx++;
             System.out.println(Integer.toBinaryString(a));
         }
-        printChar('我');
+        printChar('f');
     }
 
     static void printChar(char c) {
