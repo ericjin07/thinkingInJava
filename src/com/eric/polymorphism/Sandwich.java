@@ -5,7 +5,7 @@ package com.eric.polymorphism;
  * Author: EricJin
  * Date: 09/16/2018 1:09 PM
  */
-public class Sandwich extends PortableLunch{
+public class Sandwich extends PortableLunch implements FastFood{
     private static PortableLunch portableLunch= new PortableLunch();
 
     public Sandwich() {
@@ -13,7 +13,12 @@ public class Sandwich extends PortableLunch{
     }
 
     public static void main(String[] args) {
-        new Sandwich();
+        new Sandwich().haveColory();
+    }
+
+    @Override
+    public void haveColory() {
+        System.out.println("Has some co");
     }
 }
 
@@ -45,4 +50,8 @@ class PortableLunch extends Lunch{
     public PortableLunch() {
         System.out.println("PortableLunch()");
     }
+}
+
+interface FastFood{
+    void haveColory();
 }
