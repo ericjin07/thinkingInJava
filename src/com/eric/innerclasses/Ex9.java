@@ -17,23 +17,28 @@ public class Ex9 {
         }
     }
 
-    InterEx9 getInner(){
-        return new InnerEx9();
-    }
+//    InterEx9 getInner(){
+//        return new InnerEx9();
+//    }
 
     public InterEx9 saySomething(String s){
         if(s.equals("hello")) {
-            class Inner implements InterEx9 {
+//            class Inner implements InterEx9 {
+//                @Override
+//                public void hi(String s) {
+//                    System.out.println(s);
+//                }
+//
+//                Inner() {
+//                    hi(s);
+//                }
+//            }
+            return new InterEx9(){
                 @Override
                 public void hi(String s) {
-                    System.out.println(s);
+                    System.out.println("hiiiiiiiiiiii");
                 }
-
-                Inner() {
-                    hi(s);
-                }
-            }
-            return new Inner();
+            };
         }else{
             return null;
         }
@@ -41,7 +46,7 @@ public class Ex9 {
 
     public static void main(String[] args) {
         Ex9 ex9 = new Ex9();
-        ex9.saySomething("hellods");
-        ((InnerEx9)ex9.getInner()).hi("dasd");
+        ex9.saySomething("hello").hi("fasdf");
+//        ((InnerEx9)ex9.getInner()).hi("dasd");
     }
 }
