@@ -1,0 +1,83 @@
+package com.eric.innerclasses;
+
+/**
+ * Create by IntelliJ IDEA.
+ * Author: EricJin
+ * Date: 11/14/2018 9:32 PM
+ */
+public class Ex23 {
+
+    public static void main(String[] args) {
+        B b = new B(3);
+        for (int i = 0; i < 3 ; i++){
+            A a = new A();
+            b.store(a.getU());
+        }
+        b.traverse();
+        b.remove(2);
+        System.out.println("=====");
+        b.traverse();
+
+    }
+}
+
+interface U{
+    void f();
+    void v();
+    void w();
+}
+
+class B{
+    int index = 0;
+    U[] us;
+
+    public B(int size) {
+        us = new U[size];
+    }
+
+    void store(U u){
+        if (index < us.length)
+            us[index++] = u;
+        else
+            System.out.println("out of index");
+    }
+
+    void remove(int i){
+        if (i < 0 || i >= us.length)
+            System.out.println("out of index");
+        else
+            us[i] = null;
+    }
+
+    void traverse(){
+        for (int i= 0; i< us.length; i++){
+            U u = us[i];
+            if(u != null){
+                u.f();
+                u.v();
+                u.w();
+            }
+        }
+    }
+}
+
+class A {
+    public U getU(){
+        return new U() {
+            @Override
+            public void f() {
+                System.out.println("f");
+            }
+
+            @Override
+            public void v() {
+                System.out.println("v");
+            }
+
+            @Override
+            public void w() {
+                System.out.println("w");
+            }
+        };
+    }
+}
