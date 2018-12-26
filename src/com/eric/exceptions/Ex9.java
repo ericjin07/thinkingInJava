@@ -30,10 +30,13 @@ public class Ex9 {
             // will catch any Exception type:
         } catch(Exception e) {
             System.out.println("Caught Exception");
-            e.printStackTrace(System.out);
+            e.printStackTrace(System.err);
             System.out.println("============");
             for (StackTraceElement st : e.getStackTrace())
-                System.out.println(st);
+                System.err.println(st);
+            throw new NullPointerException();
+        } finally {
+            System.out.println("finally");
         }
     }
 
