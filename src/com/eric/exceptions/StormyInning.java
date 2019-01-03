@@ -3,7 +3,7 @@ package com.eric.exceptions;//: exceptions/StormyInning.java
 // specified in their base-class versions, or exceptions
 // derived from the base-class exceptions.
 
-class BaseballException extends Exception {
+class BaseballException extends RuntimeException {
 }
 
 class Foul extends BaseballException {
@@ -26,7 +26,7 @@ abstract class Inning {
     } // Throws no checked exceptions
 }
 
-class StormException extends Exception {
+class StormException extends RuntimeException {
 }
 
 class RainedOut extends StormException {
@@ -35,7 +35,7 @@ class RainedOut extends StormException {
 class PopFoul extends Foul {
 }
 
-class UmpireArgumentException extends Exception{}
+class UmpireArgumentException extends RuntimeException{}
 
 interface Storm {
     public void event() throws RainedOut;
@@ -57,7 +57,7 @@ public class StormyInning extends Inning implements Storm {
 // void walk() throws PopFoul {} //Compile error
     // Interface CANNOT add exceptions to existing
     // methods from the base class:
-//! public void event() throws RainedOut {}
+//    public void event() throws RainedOut {}
     // If the method doesn't already exist in the
     // base class, the exception is OK:
     public void rainHard() throws RainedOut {
@@ -75,33 +75,33 @@ public class StormyInning extends Inning implements Storm {
     }
 
     public static void main(String[] args) {
-        try {
+//        try {
             StormyInning si = new StormyInning();
             si.atBat();
-        } catch (PopFoul e) {
-            System.out.println("Pop foul");
-        } catch (RainedOut e) {
-            System.out.println("Rained out");
-        } catch (BaseballException e) {
-            System.out.println("Generic baseball exception");
-        }
+//        } catch (PopFoul e) {
+//            System.out.println("Pop foul");
+//        } catch (RainedOut e) {
+//            System.out.println("Rained out");
+//        } catch (BaseballException e) {
+//            System.out.println("Generic baseball exception");
+//        }
         // Strike not thrown in derived version.
-        try {
+//        try {
             // What happens if you upcast?
             Inning i = new StormyInning();
             i.atBat();
             // You must catch the exceptions from the
             // base-class version of the method:
-        } catch (Strike e) {
-            System.out.println("Strike");
-        } catch (Foul e) {
-            System.out.println("Foul");
-        } catch (RainedOut e) {
-            System.out.println("Rained out");
-        } catch (BaseballException e) {
-            System.out.println("Generic baseball exception");
-        } catch (UmpireArgumentException e) {
-            e.printStackTrace();
-        }
+//        } catch (Strike e) {
+//            System.out.println("Strike");
+//        } catch (Foul e) {
+//            System.out.println("Foul");
+//        } catch (RainedOut e) {
+//            System.out.println("Rained out");
+//        } catch (BaseballException e) {
+//            System.out.println("Generic baseball exception");
+//        } catch (UmpireArgumentException e) {
+//            e.printStackTrace();
+//        }
     }
 }

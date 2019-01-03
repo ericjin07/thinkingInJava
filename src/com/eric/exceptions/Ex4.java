@@ -26,7 +26,7 @@ public class Ex4 {
 
 }
 
-class Exception_4 extends Exception {
+class Exception_4 extends RuntimeException {
     private String msg;
     public Exception_4(String message) {
         super(message);
