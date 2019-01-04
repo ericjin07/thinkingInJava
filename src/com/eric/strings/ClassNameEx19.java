@@ -2,7 +2,6 @@ package com.eric.strings;
 
 import net.mindview.util.TextFile;
 
-import java.io.BufferedReader;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 

@@ -16,6 +16,7 @@ public class ScannerEx20 {
 
     public ScannerEx20(String s) {
         Scanner scanner = new Scanner(s);
+        scanner.useDelimiter("\\s*,\\s*");
         i = scanner.nextInt();
         d = scanner.nextDouble();
         l = scanner.nextLong();
@@ -24,7 +25,7 @@ public class ScannerEx20 {
     }
 
     public static void main(String[] args) {
-        ScannerEx20 se = new ScannerEx20("12 32.3 12331231 33.32");
+        ScannerEx20 se = new ScannerEx20("12, 32.3, 12331231, 33.32");
         System.out.println(se);
     }
 
