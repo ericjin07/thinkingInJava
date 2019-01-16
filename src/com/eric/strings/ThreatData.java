@@ -27,5 +27,18 @@ public class ThreatData {
             MatchResult mr = s.match();
             System.out.printf("Threat on %s from %s\n",mr.group(1),mr.group(2));
         }
+        try {
+            Class clz = Class.forName("com.eric.strings.ThreatData");
+            ThreatData t = (ThreatData) clz.newInstance();
+            System.out.println(clz);
+            System.out.println(clz.getSimpleName());
+            System.out.println(t);
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        }
     }
 }

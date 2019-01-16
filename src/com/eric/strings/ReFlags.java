@@ -17,6 +17,8 @@ public class ReFlags {
                         "JAVA has pretty good regular expression\n" +
                         "Regular expressions are in JavA"
         );
+        System.out.println(m.replaceFirst("======="));
+
         while (m.find()){
             System.out.println(m.group());
         }
