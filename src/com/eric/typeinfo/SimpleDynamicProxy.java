@@ -1,5 +1,8 @@
 package com.eric.typeinfo;
 
+import net.mindview.util.Null;
+
+import javax.lang.model.type.NullType;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
