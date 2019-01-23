@@ -23,6 +23,7 @@ class Part {
         partFactories.add(new OilFilter.Factory());
         partFactories.add(new FanBelt.Factory());
         partFactories.add(new GeneratorBelt.Factory());
+        partFactories.add(new NullPart.Factory());
     }
     private static Random rand = new Random(47);
 
@@ -41,6 +42,22 @@ class FuelFilter extends Filter {
              return new FuelFilter();
          }
      }
+}
+
+class NullPart extends Part implements Null  {
+    private static final Part nullPart = new NullPart();
+
+    @Override
+    public String toString() {
+        return "NullPart";
+    }
+
+    public static class Factory implements com.eric.typeinfo.Factory<NullPart>{
+        @Override
+        public NullPart create() {
+            return (NullPart) nullPart;
+        }
+    }
 }
 
 class AirFilter extends Filter {
