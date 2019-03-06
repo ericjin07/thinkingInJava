@@ -1,4 +1,4 @@
-package com.eric.concurrency;
+package com.eric.concurrency.exercise;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

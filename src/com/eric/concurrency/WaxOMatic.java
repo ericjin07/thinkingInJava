@@ -72,12 +72,14 @@ class Car {
 
     public synchronized void waxed(){
         waxOn = true;
-        notifyAll();
+        notify();
+//        notifyAll();
     }
 
     public synchronized  void buffed() {
         waxOn = false;
-        notifyAll();
+//        notifyAll();
+        notify();
     }
 
     public synchronized void waitForWaxing() throws InterruptedException {
