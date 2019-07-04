@@ -25,8 +25,10 @@ public class GroupsEx12 {
         Pattern p = Pattern.compile("(^[a-z]|\\s+[a-z])\\w+\\b");
         Matcher m = p.matcher(POEM);
         Set<String> word = new HashSet<>();
-        while (m.find())
+        while (m.find()) {
             word.add(m.group());
+            System.out.println(m.group());
+        }
         System.out.println(word.size());
         System.out.println(word);
     }
