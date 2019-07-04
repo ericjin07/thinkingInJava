@@ -45,5 +45,8 @@ public class Holder3<T> {
                 System.out.print(arr[i][j] + "\t");
             System.out.println();
         }
+
+//        Set<?> set = new HashSet<>();
+//        set.add("string");        //can't put
     }
 }
