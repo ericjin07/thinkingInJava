@@ -46,7 +46,7 @@ public class Holder3<T> {
             System.out.println();
         }
 
-//        Set<?> set = new HashSet<>();
-//        set.add("string");        //can't put
+//        Set<? extends Object> set = new HashSet<>();
+//        set.add(new Object());        //can't put
     }
 }
