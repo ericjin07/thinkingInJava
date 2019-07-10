@@ -46,7 +46,12 @@ public class Holder3<T> {
             System.out.println();
         }
 
-//        Set<? extends Object> set = new HashSet<>();
-//        set.add(new Object());        //can't put
+//        Set<?> set = new HashSet<>();
+//        set.add("string");        //can't put
+
+//        Object[] objects = new Long[1];
+//        objects[0] = "hah";     //runtime ArrayStoreException
+
+//        List<Object> objects = new ArrayList<Long>();   //compile time incompatible
     }
 }
